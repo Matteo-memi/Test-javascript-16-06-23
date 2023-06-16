@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //crea un array di 6 numeri interi e stampa in console la differenza tra il numero di numeri maggiori
+//di 10 e il numero di numeri inferiori a 1.
+//Inoltre, se il valore calcolato è pari a 0, stampa tutti i numeri dell'array in senso invertito,
+//altrimenti, stampa solo il primo e l'ultimo numero dell'array.
+
+  let numeri = [20, 30, 10, 15, 2, 3];
+let numerimaggiori10 = 0;
+let numeriminori1 = 0;
+
+numeri.forEach(function(numero) {
+  if (numero > 10) {
+    numerimaggiori10++;
+  }
+  if (numero < 1) {
+    numeriminori1++;
+  }
+});
+
+
+let differenza = numerimaggiori10 - numeriminori1;
+
+if (differenza === 0) {
+  numeri.reverse().forEach(function(numero) {
+    console.log(numero);
+  });
+} else {
+  console.log("Primo numero:", numeri[0]);
+  console.log("Ultimo numero:", numeri[numeri.length - 1]);
+}
+ 
+
+</script>
+<body>
+ 
+</body>
+</html>

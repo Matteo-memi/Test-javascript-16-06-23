@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  //crea una funzione che prende in ingresso due set di 5 parole
+//e restituisce la differenza tra il
+//numero di parole aventi lunghezza pari presenti nel primo 
+//set e il numero di parole che terminano
+//in 'a' presenti nel secondo set.
+//chiamare la funzione con valori a piacere per stampare il risultato.
+function differenzaParole(set1, set2) {
+  let parolePari = 0;
+  let paroleTerminantiA = 0;
+
+  set1.forEach(function(parola) {
+    if (parola.length % 2 === 0) {
+      parolePari++;
+    }
+  });
+  set2.forEach(function(parola) {
+    if (parola.charAt(parola.length - 1) === 'a') {
+      paroleTerminantiA++;
+    }
+  });
+  const differenza = parolePari - paroleTerminantiA;
+
+  return differenza;
+}
+
+let set1 = ['lago','spazio','luca','margherita','sordo'];
+let set2 = ['mora','pazzo','politica','pizza','tortona'];
+
+const risultato = differenzaParole(set1, set2);
+console.log(risultato); 
+
+</script>
+<body>
+  
+</body>
+</html>

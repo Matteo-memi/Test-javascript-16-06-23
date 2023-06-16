@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //Crea un array di 6 stringhe a piacere.
+//Successivamente, crea una mappa che avrà come chiavi le parole contenute nell'array e per valori
+//le loro lunghezze.
+//Itera sulla mappa per stampare, per ogni coppia al suo interno, la frase:
+//la parola … contiene … caratteri
+    let parole = ["Realme", "Xiaomi", "Redmi", "Samsung", "Oppo", "Sony"];
+let Lunghezze = new Map();
+
+for (let i = 0; i < parole.length; i++) {
+  let parola = parole[i];
+  Lunghezze.set(parola, parola.length);
+}
+
+Lunghezze.forEach(function(lunghezza, parola) {
+  console.log("La parola " + parola + " contiene " + lunghezza + " caratteri.");
+});
+
+</script>
+<body>
+    
+</body>
+</html>

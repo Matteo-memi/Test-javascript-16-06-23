@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //Data una stringa s a piacere, stampare solo i caratteri univoci, ovvero i caratteri che compaiono
+//SOLO una volta nella lista.
+    function trovaCaratteriUnivoci(s) {
+  let conteggio = {}
+  
+  for (var i = 0; i < s.length; i++) {
+    let carattere = s[i];
+    if (conteggio[carattere]) {
+      conteggio[carattere]++
+    } else {
+      conteggio[carattere] = 1
+    }
+  }
+  
+  let caratteriUnivoci = ""
+  
+
+  for (let i = 0; i < s.length; i++) {
+    let carattere = s[i];
+    if (conteggio[carattere] === 1) {
+      caratteriUnivoci += carattere
+    }
+  }
+  
+  console.log(caratteriUnivoci)
+}
+trovaCaratteriUnivoci('matteo')
+trovaCaratteriUnivoci('luca')
+</script>
+<body>
+    
+</body>
+</html>

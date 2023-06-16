@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //crea una funzione che prende in ingresso 2 oggetti che rappresentano due rettangoli, che avranno
+//questa struttura: {x: valore numerico, y: valore numerico}, e una stringa che può avere i seguenti
+//valori:
+//- perimetro
+//- area
+//Se il terzo parametro ha valore 'perimetro' la funzione restituisce la differenza tra il perimetro del
+//primo rettangolo e il perimetro del secondo rettangolo.
+//Se il terzo parametro ha valore 'area' la funzione restituisce la somma tra l'area del primo
+//rettangolo e l'area del secondo rettangolo.
+//Ad esempio:
+//opeRettangolo( rect1, rect2, 'area' ) -> risultato
+//opeRettangolo( rect1, rect2, 'perimetro' ) -> risultato
+//Chiama la funzione 2 volte per stampare i valori prodotti, usando valori a piacere.
+   
+function Rettangolo(ret1, ret2, operazione) {
+  if (operazione === 'perimetro') {
+    const perimetroRet1 = 2 * (ret1.x + ret1.y);
+    const perimetroRet2 = 2 * (ret2.x + ret2.y);
+    return perimetroRet1 - perimetroRet2;
+  } else if (operazione === 'area') {
+    const areaRet1 = ret1.x * ret1.y;
+    const areaRet2 = ret2.x * ret2.y;
+    return areaRet1 + areaRet2;
+  } else {
+    return 'Operazione non valida';
+  }
+}
+const rect1 = { x: 8, y: 9 };
+const rect2 = { x: 2, y: 6 };
+
+const risultatoArea = Rettangolo(rect1, rect2, 'area');
+const risultatoPerimetro = Rettangolo(rect1, rect2, 'perimetro');
+
+console.log('Risultato area:', risultatoArea);
+console.log('Risultato perimetro:', risultatoPerimetro);
+
+</script>
+<body>
+    
+</body>
+</html>

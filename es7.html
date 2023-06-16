@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+//crea una funzione che prende in ingresso due set di 5 numeri e restituisce un oggetto.
+//Questo oggetto avrà le seguenti proprietà:
+//winner -> avrà valore 1 se il primo set ha più proprietà del secondo, altrimenti 2, e 0 se hanno
+//numero pari di proprietà
+//morePositive: avrà valore 1 se il primo set ha più numeri positivi (> 0) del secondo, altrimenti 2, e 0
+//se hanno numero pari di proprietà
+//chiama la funzione per stampare proprietà e valori dell'oggetto restituito.
+
+    function confrontaSetNumeri(set1, set2) {
+  let risultato = {
+    winner: 0,
+    morePositive: 0
+  };
+
+  let ProprietaSet1 = Object.keys(set1).length;
+  let ProprietaSet2 = Object.keys(set2).length;
+
+  if (ProprietaSet1 > ProprietaSet2) {
+    risultato.winner = 1;
+  } else if (ProprietaSet1 < ProprietaSet2) {
+    risultato.winner = 2;
+  } 
+  
+
+  let PositiviSet1 = Object.values(set1).filter(function(numero) {
+    return numero > 0;
+  }).length;
+  let PositiviSet2 = Object.values(set2).filter(function(numero) {
+    return numero > 0;
+  }).length;
+
+  if (PositiviSet1 > PositiviSet2) {
+    risultato.morePositive = 1;
+  } else if (PositiviSet1 < PositiviSet2) {
+    risultato.morePositive = 2;
+  }
+
+  return risultato;
+}
+
+let setNumeri1 = { numero1: 6, numero2: 9, numero3: 1, numero4: -5, numero5: 22 };
+let setNumeri2 = { numero1: 1, numero2: -7, numero3: 12,  numero5: -4};
+
+let confronto = confrontaSetNumeri(setNumeri1, setNumeri2);
+console.log("Proprietà winner:", confronto.winner); //output 1, set 1 ha piu proprietà.
+console.log("Proprietà morePositive:", confronto.morePositive); // non ho compreso benissimo la traccia ma l'output dovrebbe essere corretto. out 1 set1 > set 2
+
+</script>
+<body>
+    
+</body>
+</html>
